@@ -1,0 +1,30 @@
+{
+	"name": "patissier",
+	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/hatch:2": {},
+		"ghcr.io/devcontainers-contrib/features/ruff:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"charliermarsh.ruff",
+				"EditorConfig.EditorConfig",
+				"github.vscode-github-actions",
+				"ms-python.python",
+				"tamasfe.even-better-toml"
+			],
+			"settings": {
+				"[python]": {
+					"editor.codeActionsOnSave": {
+						"source.fixAll": true
+					}
+				},
+				"python.testing.pytestEnabled": true,
+				"python.testing.pytestArgs": [
+					"--no-cov"
+				]
+			}
+		}
+	}
+}

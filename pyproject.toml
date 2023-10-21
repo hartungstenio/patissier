@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "patissier"
 dynamic = ["version"]
-description = ''
+description = "Asynchronous message dispatcher"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
@@ -43,7 +43,11 @@ detached = true
 dependencies = ["black", "mypy", "pyupgrade", "ruff"]
 [tool.hatch.envs.lint.scripts]
 typing = "mypy --install-types --non-interactive {args:src/patissier tests}"
-style = ["ruff {args:.}", "black --check --diff {args:.}", "pyupgrade --py311-plus"]
+style = [
+  "ruff {args:.}",
+  "black --check --diff {args:.}",
+  "pyupgrade --py311-plus",
+]
 fmt = ["black {args:.}", "ruff --fix {args:.}", "style"]
 all = ["style", "typing"]
 
